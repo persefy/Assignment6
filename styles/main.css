@@ -1,0 +1,106 @@
+header, nav, section, aside, article, footer, video, audio, main {      display: block;
+}
+* {
+    padding:0;
+    margin:0;
+}
+header {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: aliceblue;
+    text-align: center;
+    padding: 1em;
+}
+h1 {
+    margin: 1em;
+}
+h2 {
+    font-weight: lighter;
+}
+h3 {
+    text-align: center;
+    background-color: darkgoldenrod;
+    color: #fff;
+    margin-bottom: .5em;
+}
+form {
+    font-family: Cambria, Helvetica, sans-serif;
+}
+#mainContent {
+    max-width: 700px;
+    margin: 0 auto;
+}
+#mainContent p {
+    max-width: 500px;
+}
+p label{
+    width: 30%;
+    float: left;
+}
+p input {
+    background-color: #fff9df;
+    width: 50%;
+    float: left;
+}
+fieldset {
+    border: none;
+}
+legend {
+    text-align: center;
+    font-weight: bolder;
+    padding: 1em;
+}
+.clearIt {
+    clear: both;
+    
+}
+.radioBtn {
+    margin: .25em;
+    /*add responsive details here for radio button*/
+}
+.radioBtn li{
+    display: inline-block;
+}
+.checkBoxScroll { 
+    padding-left: 1em;
+    border:2px solid #ccc;
+    width:200px;
+    height: 100px;
+    overflow-y: scroll;
+}
+.checkBoxScroll span {
+    float: right;
+}
+.quickInfo {
+    font-style: italic;
+    padding-bottom: .5em;
+    text-align: center;
+}
+#customerPrepop {
+    margin-bottom: .5em;
+}
+.shortInput {
+    width: 10%;
+   }
+input[type=button], input[type=text], select, input[type=checkbox] {
+    margin-top: .5em;
+    padding: .25em;
+}
+
+
+
+
+footer {
+    background-color: aliceblue;
+    margin-top: 3em;
+    /*position: absolute;
+    bottom: 0;
+    left: 50%*/
+}
+
+
+
+
+
+
+

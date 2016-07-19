@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ultimate Pizza Delivery - Form</title>
+    <link href="styles/main.css" type="text/css" rel="stylesheet">
+    
+</head>
+<body>
+    <header>
+        <h1>Ultimate Pizza</h1>
+        <h2>Get the best pizza in town! Use the order form below to place and order with the pizza spot that's got the neighbors raging. Quality cheese, premier sauce and the fresh toppings all on top of our specialty dough. Don't delay, place an order now!</h2>
+    </header>
+    <main>
+        <div id="mainContent">
+            <h3>Place your Order Below:</h3>
+            <form>
+                <fieldset>
+                    <legend>Customer Information</legend>           
+                        <p><label for="name">Name</label>
+                        <input type="text" name="name" id="name" />
+                        </p>
+                        <div class="clearIt"></div>
+                        <span class="likeLabel"><p>Address Type:</p></span>
+                            <select name="addressType" id="addressType">
+                                <option value="house">house</option>
+                                <option value="apartment">apartment</option>
+                                <option value="business">business</option>
+                                <option value="campus">campus</option>
+                                <option value="hotel">hotel</option>
+                                <option value="dorm">dorm</option>
+                                <option value="other">other</option>
+                            </select>
+                        <input type="text" name="addressType" id="other" />
+                        
+                        <p><label for="address">Street Address</label>
+                        <input type="text" name="address" id="address" />
+                        </p>
+                        <p><label for="addressOpt">Address Line 2</label>
+                        <input type="text" name="addressOpt" id="addressOpt" />
+                        </p>
+                        <p><label for="city">City</label>
+                        <input type="text" name="city" id="city" />
+                        </p>
+                        <p><label for="state">State</label>
+                        <input type="text" name="state" id="state" class="shortInput" />
+                        </p>
+                        <div class="clearIt"></div>
+                        <p><label for="zipCode">Zip Code</label>
+                        <input type="text" name="zipCode" id="zipCode" />
+                        </p>
+                        <p><label for="phone">Phone Number</label>
+                        <input type="text" name="phone" id="phone" />
+                        </p>
+                        <p><label for="email">E-mail</label>
+                        <input type="text" name="email" id="email" />
+                        </p>
+                </fieldset>
+                <!-- Consider ending form here and making a continue button -->
+                <fieldset>
+                    <legend>Build Your Order</legend>
+                        <span class="likeLabel clearIt"><p>Pick your Dough:</p></span>
+                            <ul class="radioBtn">
+                                <li>
+                                    <input type="radio" name="dough" value="handTossed" id="handTossed"  />
+                                    <label for="handTossed">Hand Tossed</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="dough" value="thinCrust" id="thinCrust" />
+                                    <label for="thinCrust">Thin Crust</label>
+                                <li>
+                                    <input type="radio" name="dough" value="newYorkStyle" id="newYorkStyle" />
+                                    <label for="newYorkStyle">New York Style</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="dough" value="glutenFree" id="glutenFree" />
+                                    <label for="glutenFree">Gluten Free</label>
+                                </li>
+                            </ul>
+                    <span class="likeLabel"><p>Now choose a size:</p></span>
+                        <select name="pizzaHandTossed" id="pizzaHandTossed">
+                            <option value="small">Small ($9.99)</option>
+                            <option value="medium">Medium ($12.99)</option>
+                            <option value="large">Large ($14.99)</option>
+                        </select>
+                        <select name="pizzaThinCrust" id="pizzaThinCrust">
+                            <option value="medium">Medium ($11.99)</option>
+                            <option value="large">Large ($13.99)</option>
+                        </select>
+                        <select name="pizzaNewYorkStyle" id="pizzaNewYorkStyle">
+                            <option value="Large">Large ($16.99)</option>
+                            <option value="Extra large">Extra Large ($19.99)</option>
+                        </select>
+                        <select name="pizzaGlutenFree" id="pizzaGlutenFree">
+                            <option value="small">small ($10.99)</option>
+                        </select>
+                        
+                        <span class="likeLabel"><p>Cheese Option:</p></span>
+                            <select name="cheese" id="cheese">
+                                <option value="normal">Normal (no charge)</option>
+                                <option value="normal">Light (no charge)</option>
+                                <option value="extra">Extra (+$2.99)</option>
+                                <option value="double">Double (+$3.99)</option>
+                            </select>
+                        <span class="likeLabel"><p>Sauce Options:</p></span>
+                            <select name="sauce" id="sauce">
+                                <option value="regular">Regular Tomato (no charge)</option>
+                                <option value="heartyTomato">Hearty Tomato (+$0.99)</option>
+                                <option value="BbqSauce">BBQ Sauce (+$1.99)</option>
+                            </select>
+                        <span class="likeLabel"><p>Add Toppings:</p></span>
+                        <div class="checkBoxScroll">
+                            <input type="checkbox" name="toppings" id="pepperoni" value="pepperoni" /> <label for="pepperoni">pepperoni</label>
+                            <span>(+$0.99)</span> <br />
+                            <input type="checkbox" name="toppings" id="sausage" value="sausage" /> <label for="sausage">sausage</label>
+                            <span>(+$0.99)</span> <br />
+                            <input type="checkbox" name="toppings" id="ham" value="ham" /> <label for="ham">ham</label> 
+                            <span>(+$0.99)</span> <br />
+                            <input type="checkbox" name="toppings" id="bacon" value="bacon" /> <label for="bacon">bacon</label> 
+                            <span>(+$0.99)</span> <br />
+                            <input type="checkbox" name="toppings" id="salami" value="salami" /> <label for="salami">salami</label> 
+                            <span>(+$0.99)</span> <br />
+                            <input type="checkbox" name="toppings" id="peppers" value="peppers" /> <label for="peppers">peppers</label> 
+                            <span>(+$0.99)</span> <br />
+                            <input type="checkbox" name="toppings" id="olives" value="olives" /> <label for="olives">olives</label> 
+                            <span>(+$0.99)</span> <br />
+                            <input type="checkbox" name="toppings" id="jalapenos" value="jalapenos" /> <label for="jalapenos">jalapenos</label> 
+                            <span>(+$0.99)</span> <br />
+                            <input type="checkbox" name="toppings" id="mushrooms" value="mushrooms" /> <label for="mushrooms">mushrooms</label> 
+                            <span>(+$0.99)</span> <br />
+                            <input type="checkbox" name="toppings" id="pineapple" value="pineapple" /> <label for="pineapple">pineapple</label> 
+                            <span>(+$0.99)</span> <br />
+                            <input type="checkbox" name="toppings" id="onion" value="onion" /> <label for="onion">onion</label> 
+                            <span>(+$0.99)</span> 
+                        </div>  
+                </fieldset>
+                <input type="button" value="Finished Building Pizza" id="continueNextForm"/>
+                
+                <fieldset>
+                    <legend>Billing Information</legend>
+                    <input type="checkbox" name="sameAs" id="customerPrepop" value="customerPrepop" /> <label for="customerPrepop">Same as Customer Information</label>
+                        <p><label for="name2">Name</label>
+                        <input type="text" name="name2" id="name2" />
+                        </p>
+                        <p><label for="address2">Street Address</label>
+                        <input type="text" name="address2" id="address2" />
+                        </p>
+                        <p><label for="addressOpt2">Address Line 2</label>
+                        <input type="text" name="addressOpt2" id="addressOpt2" />
+                        </p>
+                        <p><label for="city2">City</label>
+                        <input type="text" name="city2" id="city2" />
+                        </p>
+                        <p><label for="state2">State</label>
+                        <input type="text" name="state2" id="state2" />
+                        </p>
+                        <p><label for="zipCode2">Zip Code</label>
+                        <input type="text" name="zipCode2" id="zipCode2" />
+                        </p>
+                </fieldset>
+                <fieldset>
+                    <legend>Payment</legend>
+                    <p class="quickInfo">Currently, we only accept card payments for online orders.</p>
+                    <!--Add a series of fields for credit card information including credit card number, CVC code (three digit code), and expiration date (month (drop down list) and year (drop down list)). -->
+                    <p><label for="cardNumber">Card Number</label>
+                        <input type="text" name="cardNumber" id="cardNumber" />
+                    </p>    
+                    <p><label for="cvcCode">CVC code</label>
+                        <input type="text" name="cvcCode" id="cvcCode" class="shortInput" />
+                    </p>
+                    <div class="clearIt"></div>
+                    <span class="likeLabel"><p>Expiration Date:</p></span>
+                        <select name="expirationMonth" id="expirationMonth">
+                            <option value="1">1 - January</option>
+                            <option value="2">2 - February</option>
+                            <option value="3">3 - March</option>
+                            <option value="4">4 - April</option>
+                            <option value="5">5 - May</option>
+                            <option value="6">6 - June</option>
+                            <option value="7">7 - July</option>
+                            <option value="8">8 - August</option>
+                            <option value="9">9 - September</option>
+                            <option value="10">10 - October</option>
+                            <option value="11">11 - November</option>
+                            <option value="12">12 - December</option>
+                        </select>
+                        <select name="expirationYear" id="expirationYear">
+                            <option value="2016">2016</option>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                        </select>
+                </fieldset>
+                
+                <input type="button" value="Place Order" id="submitBtn"/>
+            </form>
+            
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; All Rights Reserved</p>
+    </footer>
+    
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
