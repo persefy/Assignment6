@@ -16,6 +16,7 @@ h1 {
 }
 h2 {
     font-weight: lighter;
+    font-size: 1.15em;
 }
 h3 {
     text-align: center;
@@ -25,6 +26,10 @@ h3 {
 }
 form {
     font-family: Cambria, Helvetica, sans-serif;
+    padding: 10px;
+}
+#form1 {
+    position: relative;
 }
 #mainContent {
     max-width: 700px;
@@ -87,9 +92,20 @@ input[type=button], input[type=text], select, input[type=checkbox] {
     padding: .25em;
 }
 
-
-
-
+#showCost {
+    background-color: yellow;
+    border: 1px black solid;
+    display: inline-block;
+    padding: 1em;
+    width: 100px;
+    position: absolute;
+    top: 37%;
+    right: 2em;
+    text-align: center;
+}
+.errorHere {
+    border: red solid 2px;
+}
 footer {
     background-color: aliceblue;
     margin-top: 3em;
@@ -97,9 +113,6 @@ footer {
     bottom: 0;
     left: 50%*/
 }
-
-
-
 
 
 

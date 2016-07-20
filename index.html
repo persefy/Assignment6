@@ -9,14 +9,14 @@
 <body>
     <header>
         <h1>Ultimate Pizza</h1>
-        <h2>Get the best pizza in town! Use the order form below to place and order with the pizza spot that's got the neighbors raging. Quality cheese, premier sauce and the fresh toppings all on top of our specialty dough. Don't delay, place an order now!</h2>
+        <h2>Get the best pizza in town! Quality cheese, premier sauce and the fresh toppings all on top of our specialty dough. Don't delay, place an order now!</h2>
     </header>
     <main>
         <div id="mainContent">
-            <h3>Place your Order Below:</h3>
-            <form>
+            <h3>Place your order using our form:</h3>
+            <form id="form1">
                 <fieldset>
-                    <legend>Customer Information</legend>           
+                    <legend>Delivery Information</legend>           
                         <p><label for="name">Name</label>
                         <input type="text" name="name" id="name" />
                         </p>
@@ -36,9 +36,11 @@
                         <p><label for="address">Street Address</label>
                         <input type="text" name="address" id="address" />
                         </p>
-                        <p><label for="addressOpt">Address Line 2</label>
+                        <div class="clearIt"></div>
+                        <p><label for="addressOpt">Apt, suite, or room #</label>
                         <input type="text" name="addressOpt" id="addressOpt" />
                         </p>
+                        <div class="clearIt"></div>
                         <p><label for="city">City</label>
                         <input type="text" name="city" id="city" />
                         </p>
@@ -52,6 +54,7 @@
                         <p><label for="phone">Phone Number</label>
                         <input type="text" name="phone" id="phone" />
                         </p>
+                        <div class="clearIt"></div>
                         <p><label for="email">E-mail</label>
                         <input type="text" name="email" id="email" />
                         </p>
@@ -97,10 +100,10 @@
                         
                         <span class="likeLabel"><p>Cheese Option:</p></span>
                             <select name="cheese" id="cheese">
-                                <option value="normal">Normal (no charge)</option>
-                                <option value="normal">Light (no charge)</option>
-                                <option value="extra">Extra (+$2.99)</option>
-                                <option value="double">Double (+$3.99)</option>
+                                <option value="0">Normal (no charge)</option>
+                                <option value="0">Light (no charge)</option>
+                                <option value="2.99">Extra (+$2.99)</option>
+                                <option value="3.99">Double (+$3.99)</option>
                             </select>
                         <span class="likeLabel"><p>Sauce Options:</p></span>
                             <select name="sauce" id="sauce">
@@ -135,25 +138,31 @@
                         </div>  
                 </fieldset>
                 <input type="button" value="Finished Building Pizza" id="continueNextForm"/>
-                
+            </form>
+            
+            <form id="form2">
                 <fieldset>
                     <legend>Billing Information</legend>
-                    <input type="checkbox" name="sameAs" id="customerPrepop" value="customerPrepop" /> <label for="customerPrepop">Same as Customer Information</label>
+                    <input type="checkbox" name="sameAs" id="customerPrePop" value="customerPrePop" /> <label for="customerPrepop">Same as Delivery Information</label>
                         <p><label for="name2">Name</label>
                         <input type="text" name="name2" id="name2" />
                         </p>
                         <p><label for="address2">Street Address</label>
                         <input type="text" name="address2" id="address2" />
                         </p>
-                        <p><label for="addressOpt2">Address Line 2</label>
+                        <div class="clearIt"></div>
+                        <p><label for="addressOpt2">Apt, suite, or room #</label>
                         <input type="text" name="addressOpt2" id="addressOpt2" />
                         </p>
+                        <div class="clearIt"></div>
                         <p><label for="city2">City</label>
                         <input type="text" name="city2" id="city2" />
                         </p>
+                        <div class="clearIt"></div>
                         <p><label for="state2">State</label>
                         <input type="text" name="state2" id="state2" />
                         </p>
+                        <div class="clearIt"></div>
                         <p><label for="zipCode2">Zip Code</label>
                         <input type="text" name="zipCode2" id="zipCode2" />
                         </p>
@@ -165,21 +174,22 @@
                     <p><label for="cardNumber">Card Number</label>
                         <input type="text" name="cardNumber" id="cardNumber" />
                     </p>    
+                    <div class="clearIt"></div>
                     <p><label for="cvcCode">CVC code</label>
                         <input type="text" name="cvcCode" id="cvcCode" class="shortInput" />
                     </p>
                     <div class="clearIt"></div>
                     <span class="likeLabel"><p>Expiration Date:</p></span>
                         <select name="expirationMonth" id="expirationMonth">
-                            <option value="1">1 - January</option>
-                            <option value="2">2 - February</option>
-                            <option value="3">3 - March</option>
-                            <option value="4">4 - April</option>
-                            <option value="5">5 - May</option>
-                            <option value="6">6 - June</option>
-                            <option value="7">7 - July</option>
-                            <option value="8">8 - August</option>
-                            <option value="9">9 - September</option>
+                            <option value="1">01 - January</option>
+                            <option value="2">02 - February</option>
+                            <option value="3">03 - March</option>
+                            <option value="4">04 - April</option>
+                            <option value="5">05 - May</option>
+                            <option value="6">06 - June</option>
+                            <option value="7">07 - July</option>
+                            <option value="8">08 - August</option>
+                            <option value="9">09 - September</option>
                             <option value="10">10 - October</option>
                             <option value="11">11 - November</option>
                             <option value="12">12 - December</option>
@@ -197,7 +207,7 @@
                 
                 <input type="button" value="Place Order" id="submitBtn"/>
             </form>
-            
+            <div id="showCost">Total Cost: <br />$<span id="totalCost"></span></div>
         </div>
     </main>
     

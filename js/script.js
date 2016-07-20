@@ -7,53 +7,56 @@
 /*-------------------------------------------------------------*/
 //document.addEventListener("DOMContentLoaded", init, false);
 
+
+var totalCostVar = document.getElementById('totalCost');
+var totalCost = Number(totalCostVar.innerHTML);
+window.console.log(totalCost); // delete after
+
+document.forms[1].style.display = 'none'; //CBH! uncomment once coding is complete
+
 /*-------------------- gathering value from user input text ---------------*/
+var customerName = document.getElementById('name');
 function getCustomerName() {
-    var customerName = document.getElementById('name').value;
-    window.console.log(customerName);
+    window.console.log(this.customerName.value);
 }
+
+var customerAddress1 = document.getElementById('address');
 function getCustomerAddressLine1() {
-    var customerAddress1 = document.getElementById('address').value;
-    window.console.log(customerAddress1);
+    
+    window.console.log(this.customerAddress1.value);
 }    
+
+var customerAddress2 = document.getElementById('addressOpt');
 function getCustomerAddressLine2() {
-    var customerAddress2 = document.getElementById('addressOpt').value;
-    window.console.log(customerAddress2);
-}
-function getCustomerAddressType() {
-    /*var customerAddress2 = document.getElementById('addressType').value;
-    window.console.log(customerAddress2);*/
-}
-function getCustomerAddress() {
-    //address line 1
-    //address line 2
+    window.console.log(this.customerAddress2.value);
 }
 
+var customerCity = document.getElementById('city');
 function getCustomerCity() {
-    var customerCity = document.getElementById('city').value;
-    window.console.log(customerCity);
+    window.console.log(this.customerCity.value);
 }
+
+var customerState = document.getElementById('state');
 function getCustomerState() {
-    var customerState = document.getElementById('state').value;
-    window.console.log(customerState);
+    window.console.log(this.customerState.value);
 }
 
+var customerZipCode = document.getElementById('zipCode');
 function getCustomerZipCode() {
-    var customerZipCode = document.getElementById('zipCode').value;
-    window.console.log(customerZipCode);
+    window.console.log(this.customerZipCode.value);
 }
+
+var customerPhone = document.getElementById('phone');
 function getCustomerPhone() {
-    var customerPhone = document.getElementById('phone').value;
-    window.console.log(customerPhone);
+    window.console.log(this.customerPhone.value);
 }
 
+var customerEmail = document.getElementById('email');
 function getCustomerEmail() {
-    var customerEmail = document.getElementById('email').value;
-    window.console.log(customerEmail);
+    window.console.log(this.customerEmail.value);
 }
 
-
-/*-------------------- gathering value from user input text End Code-------------*/
+/*-------------------- gathering value from user input text -- End Code---------*/
 
 
 //address type code:
@@ -88,6 +91,8 @@ function checkInputText() {
         window.console.log('Accepted Name');
     } else if(valueOfChar == null || valueOfChar == "") {
         window.alert('Please fill in your name');
+        stringCharacter.className += 'errorHere';
+        
         //error message here //CBH
     }
 }
@@ -173,9 +178,7 @@ document.getElementById('phone').addEventListener('blur', grabInfoPhone , false)
 document.getElementById('email').addEventListener('blur', grabInfoEmail , false);
 
 //document.getElementById('zipCode').addEventListener('blur', checkInputZipCode, false);
-/*-----------------Afte user inputs text Code------------------------------------*/
-
-
+/*-----------------After user inputs text Code------------------------------------*/
 
 
 /*---------------------Disabled Until its time---------------------------*/
@@ -229,56 +232,85 @@ function toppingsAble() {
     pineapple.disabled = false;
     onion.disabled = false;
 }
-/*-------------------------Disabling code End-----------------------*/
-
+/*-------------------------Disabling code -- End--------------------*/
+/*-------------------------- Dough Options -------------------------*/
 //Dough Options Code starts here 
     //functioning to show/hide but must be bound to object using literal notation--useful when adding in price //CBH
 
-document.getElementById('pizzaHandTossed').style.display = 'none';
-document.getElementById('pizzaThinCrust').style.display = 'none';
-document.getElementById('pizzaNewYorkStyle').style.display = 'none';
-document.getElementById('pizzaGlutenFree').style.display = 'none';
+//Making variable and defaulting all select options to hidden
+var pizzaHandTossed = document.getElementById('pizzaHandTossed');
+pizzaHandTossed.style.display = 'none';
 
+var pizzaThinCrust = document.getElementById('pizzaThinCrust')
+pizzaThinCrust.style.display = 'none';
 
-var handTossed = document.querySelectorAll('input[type=radio]')[0];
-var thinCrust = document.querySelectorAll('input[type=radio]')[1];
-var newYorkStyle = document.querySelectorAll('input[type=radio]')[2];
-var glutenFree = document.querySelectorAll('input[type=radio]')[3];
+var pizzaNewYorkStyle = document.getElementById('pizzaNewYorkStyle')
+pizzaNewYorkStyle.style.display = 'none';
 
+var pizzaGlutenFree = document.getElementById('pizzaGlutenFree')
+pizzaGlutenFree.style.display = 'none';
+
+//Identifying each radio button by use of variables
+var handTossed = document.querySelectorAll('input[type=radio]')[0],
+    thinCrust = document.querySelectorAll('input[type=radio]')[1],
+    newYorkStyle = document.querySelectorAll('input[type=radio]')[2],
+    glutenFree = document.querySelectorAll('input[type=radio]')[3];
+
+/*---------------------- Dough Options -- End Code ----------------------*/
+
+/*----------------------- Cheese Option -------------------------------*/
+//function cheeseSelection() {
+    //as long as variable cheese is still applicable
+    /*if (cheese.selectedIndex > 0) {
+        if ("light" === cheese.options[cheese.selectedIndex].value) {
+            window.console.log("Light is selected. No charge");
+        }*/
+//    var cheeseOption = cheese.options[cheese.selectedIndex].value;
+    //var cheeseCostAdd = Number(cheeseOption);
+//    totalCost.innerHTML += Number(cheeseOption);
+    
+//}
+
+var normalCheese = cheese.options[0].value,
+    lightCheese = cheese.options[1].value,
+    doubleCheese = cheese.options[2].value,
+    extraCheese = cheese.options[3].value;
+//cheese.addEventListener('click', runDoubleCheese, false); //CBH
+/*----------------------- Cheese Option -- End Code ---------------------*/
+/*-----------------Functions for dough selections------------------------*/
 function checkedHandTossed() {
-    document.getElementById('pizzaHandTossed').style.display = 'block';
-    document.getElementById('pizzaThinCrust').style.display = 'none';
-    document.getElementById('pizzaNewYorkStyle').style.display = 'none';
-    document.getElementById('pizzaGlutenFree').style.display = 'none';
+    pizzaHandTossed.style.display = 'block';
+    pizzaThinCrust.style.display = 'none';
+    pizzaNewYorkStyle.style.display = 'none';
+    pizzaGlutenFree.style.display = 'none';
     cheeseAble();
     sauceAble();
     toppingsAble();
-    
 }
 function checkedThinCrust() {
-    document.getElementById('pizzaHandTossed').style.display = 'none';
-    document.getElementById('pizzaThinCrust').style.display = 'block';
-    document.getElementById('pizzaNewYorkStyle').style.display = 'none';
-    document.getElementById('pizzaGlutenFree').style.display = 'none';
+    pizzaHandTossed.style.display = 'none';
+    pizzaThinCrust.style.display = 'block';
+    pizzaNewYorkStyle.style.display = 'none';
+    pizzaGlutenFree.style.display = 'none';
     cheeseAble();
     sauceAble();
     toppingsAble();
     
 }
 function checkedNewYorkStyle() {
-    document.getElementById('pizzaHandTossed').style.display = 'none';
-    document.getElementById('pizzaThinCrust').style.display = 'none';
-    document.getElementById('pizzaNewYorkStyle').style.display = 'block';
-    document.getElementById('pizzaGlutenFree').style.display = 'none';
+    pizzaHandTossed.style.display = 'none';
+    pizzaThinCrust.style.display = 'none';
+    pizzaNewYorkStyle.style.display = 'block';
+    pizzaGlutenFree.style.display = 'none';
     cheeseAble();
     sauceAble();
     toppingsAble();
 }
 function checkedGlutenFree() {
-    document.getElementById('pizzaHandTossed').style.display = 'none';
-    document.getElementById('pizzaThinCrust').style.display = 'none';
-    document.getElementById('pizzaNewYorkStyle').style.display = 'none';
-    document.getElementById('pizzaGlutenFree').style.display = 'block';
+    pizzaHandTossed.style.display = 'none';
+    pizzaThinCrust.style.display = 'none';
+    pizzaNewYorkStyle.style.display = 'none';
+    pizzaGlutenFree.style.display = 'block';
     cheeseAble();
     sauceAble();
     toppingsAble();
@@ -288,27 +320,98 @@ handTossed.addEventListener('click', checkedHandTossed, false);
 thinCrust.addEventListener('click', checkedThinCrust, false);
 newYorkStyle.addEventListener('click', checkedNewYorkStyle, false);
 glutenFree.addEventListener('click', checkedGlutenFree, false);
+/*---------------Functions for dough selections-- End-----------------*/
 
-/*-----------------------------------*/
-
-//Prepopulating Code
-function prepopInfo() {
-    var name = getCustomerName();
-    var addressL1 = getCustomerAddressLine1();
-    var addressL2 = getCustomerAddressLine2();
-    var city = getCustomerCity();
-    var state = getCustomerState();
-    var zipCode = getCustomerZipCode();
-    window.console.log(name, addressL1, addressL2, city, state, zipCode);
+/*------------------ Heading to next form ------------*/
+var pizzaDoneBtn = document.getElementById('continueNextForm');
+function nextForm() {
+    var formContinue = window.confirm("Are you done building your ultimate pizza?");
+        if (formContinue == true) {
+            document.forms[0].style.display = 'none';
+            document.forms[1].style.display = 'block';
+        } else {
+            window.console.log("Continue Building your Ultimate Pizza!");
+        }
+    //verifyFields(); this function will very that all fields have a value if req
+    //CBH!
 }
+pizzaDoneBtn.addEventListener('click', nextForm, false);
 
-var customerPrepopInfo = document.getElementById('customerPrepop');
-customerPrepopInfo.addEventListener('click', prepopInfo, false);
+
+//Prepopulating Code--only active 4 clicks--do, undo, do, undo
+var customerPrePopInfo = document.getElementById('customerPrePop');
+function prePopInfo() {
+    //name, street address, optional apartment number, suite, or room number, city, state, and zip code
+    document.forms[1].elements["name2"].value = customerName.value;
+    document.forms[1].elements["address2"].value = customerAddress1.value;
+    document.forms[1].elements["addressOpt2"].value = customerAddress2.value;
+    document.forms[1].elements["city2"].value = customerCity.value;
+    document.forms[1].elements["state2"].value = customerState.value;
+    document.forms[1].elements["zipCode2"].value = customerZipCode.value;
+    
+    customerPrePopInfo.addEventListener('click', function() {
+    document.forms[1].elements["name2"].value = "";
+    document.forms[1].elements["address2"].value = "";
+    document.forms[1].elements["addressOpt2"].value = "";
+    document.forms[1].elements["city2"].value = "";
+    document.forms[1].elements["state2"].value = "";
+    document.forms[1].elements["zipCode2"].value = "";
+    
+    customerPrePopInfo.addEventListener('click', function() {
+        document.forms[1].elements["name2"].value = customerName.value;
+        document.forms[1].elements["address2"].value = customerAddress1.value;
+        document.forms[1].elements["addressOpt2"].value = customerAddress2.value;
+        document.forms[1].elements["city2"].value = customerCity.value;
+        document.forms[1].elements["state2"].value = customerState.value;
+        document.forms[1].elements["zipCode2"].value = customerZipCode.value;
+            
+        customerPrePopInfo.addEventListener('click', function() {
+            document.forms[1].elements["name2"].value = "";
+            document.forms[1].elements["address2"].value = "";
+            document.forms[1].elements["addressOpt2"].value = "";
+            document.forms[1].elements["city2"].value = "";
+            document.forms[1].elements["state2"].value = "";
+            document.forms[1].elements["zipCode2"].value = "";
+            })
+        },false);
+    }, false);
+}
+customerPrePopInfo.addEventListener('click', prePopInfo, false);
 
 /*-------------------------Get Customer Billing info-----------------------*/
 
+//whether or not prepopulated:
 
+var customerName_2 = document.getElementById('name2');
+function getBillingName() {
+    window.console.log(this.customerName.value);
+}
 
+var customerAddress1_2 = document.getElementById('address2');
+function getBillingAddressLine1() {
+    
+    window.console.log(this.customerAddress1.value);
+}    
+
+var customerAddress2_3 = document.getElementById('addressOpt2');
+function getBillingAddressLine2() {
+    window.console.log(this.customerAddress2.value);
+}
+
+var customerCity_4 = document.getElementById('city2');
+function getBillingCity() {
+    window.console.log(this.customerCity.value);
+}
+
+var customerState_5 = document.getElementById('state2');
+function getBillingState() {
+    window.console.log(this.customerState.value);
+}
+
+var customerZipCode_6 = document.getElementById('zipCode2');
+function getBillingZipCode() {
+    window.console.log(this.customerZipCode.value);
+}
 
 
 
